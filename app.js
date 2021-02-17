@@ -71,7 +71,10 @@ app.get('/', function(req, res){
       }
     }
   }
-  jsonresponse={matrix,addresses}
+  jsonresponse={
+    input:matrix,
+    output:addresses
+  }
   // res.send(jsonresponse)
   responses.push(JSON.stringify(jsonresponse))
   res.end(JSON.stringify(jsonresponse))
