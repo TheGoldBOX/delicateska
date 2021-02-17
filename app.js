@@ -7,7 +7,8 @@ app.get('/', function(req, res){
       matrix=[], 
       grid=[],
       addresses=[],
-      jsonresponse={}
+      jsonresponse={},
+      responses=[]
   
   for (let i=0; i<N; i++){
     matrix[i]=[]
@@ -72,6 +73,7 @@ app.get('/', function(req, res){
   }
   jsonresponse={matrix,addresses}
   // res.send(jsonresponse)
+  responses.push(JSON.stringify(jsonresponse))
   res.end(JSON.stringify(jsonresponse))
 })
 
